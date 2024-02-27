@@ -1,0 +1,1 @@
+Day 6 was an online challenge. No code written
