@@ -22,6 +22,7 @@ def is_valid(input_text):
                         break
                 i += 1
 
+            # Check if a digit comes before a letter
             x = 0
             while x < (len(input_text) - 1):
                 if input_text[x].isdigit() == True and input_text[x+1].isalpha() == True:
