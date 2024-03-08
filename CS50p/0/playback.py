@@ -1,3 +1,3 @@
 str_input = input()
 
-print(str_input.replace(" ","..."))
+print(str_input.replace(" ", "..."))

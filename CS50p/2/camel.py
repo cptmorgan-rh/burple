@@ -2,6 +2,7 @@ def main():
     camelcase = input("camelCase: ")
     print(snakecase(camelcase))
 
+
 def snakecase(input_text):
     snake_case = ""
     for c in input_text:
@@ -10,6 +11,7 @@ def snakecase(input_text):
         else:
             snake_case += c
 
-    return(f"snake_case: {snake_case}")
+    return (f"snake_case: {snake_case}")
+
 
 main()
