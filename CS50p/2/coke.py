@@ -14,7 +14,5 @@ def main():
             else:
                 print(f"Change Owed: {coin -  amount}")
                 amount -= coin
-        else:
-            print(f"Change Owed: {amount}")
 
 main()
