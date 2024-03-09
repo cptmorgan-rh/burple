@@ -1,5 +1,5 @@
 def main():
-    time = input("What time is it? ")
+    time = input("What time is it? ").strip()
 
     converted_time = convert(time)
 
@@ -13,23 +13,22 @@ def main():
 
 def convert(time):
 
-    if time.endswith("a.m."):
-        am_time = time.removesuffix(" a.m.")
-        hours, minutes = am_time.split(":")
-        converted_time = float(hours) + (float(minutes) / 60)
-        return (converted_time)
-    elif time.endswith("p.m."):
-        pm_time = time.removesuffix(" p.m.")
-        hours, minutes = pm_time.split(":")
-        if hours != "12":
-            converted_time = (float(hours) + 12) + (float(minutes) / 60)
-        elif hours == "12":
-            converted_time = (float(hours)) + (float(minutes) / 60)
-        return (converted_time)
+    if " " in time:
+        time, convention = time.split(" ")
+        if 'p' in convention:
+            hours, minutes = time.split(":")
+            if hours == "12":
+                converted_time = (float(hours)) + (float(minutes) / 60)
+            else:
+                converted_time = (float(hours) + 12) + (float(minutes) / 60)
+        else:
+            hours, minutes = time.split(":")
+            converted_time = float(hours) + (float(minutes) / 60)
     else:
         hours, minutes = time.split(":")
         converted_time = float(hours) + (float(minutes) / 60)
-        return (converted_time)
+
+    return (converted_time)
 
 
 if __name__ == "__main__":
