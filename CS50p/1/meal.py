@@ -21,12 +21,10 @@ def convert(time):
                 converted_time = (float(hours)) + (float(minutes) / 60)
             else:
                 converted_time = (float(hours) + 12) + (float(minutes) / 60)
-        else:
-            hours, minutes = time.split(":")
-            converted_time = float(hours) + (float(minutes) / 60)
-    else:
-        hours, minutes = time.split(":")
-        converted_time = float(hours) + (float(minutes) / 60)
+            return (converted_time)
+
+    hours, minutes = time.split(":")
+    converted_time = float(hours) + (float(minutes) / 60)
 
     return (converted_time)
 
